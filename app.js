@@ -1,84 +1,57 @@
 function m1() {
-  const input = document.getElementById("inputValue").value;
-  const start = +document.getElementById("start").value;
-  const end = +document.getElementById("end").value;
-  const arr = input.trim().split(" ");
-  Array.prototype.customSlice = function (start, end) {
-    const result = [];
-    start = start || 0;
-    end = end || this.length;
-    for (let i = start; i < end; i++) {
-      result.push(this[i]);
+  const input = document.getElementById("array").value;
+  const arr = input.trim().split(" ").map(Number);
+  const sum = +document.getElementById("sum").value;
+  const pairs = [];
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] + arr[j] === sum) {
+        pairs.push(`[${arr[i]}, ${arr[j]}]`);
+      }
     }
-    return result;
-  };
-  document.getElementById("output").innerHTML = `
-  Custom: ${arr.customSlice(start, end)}
-   <br>
-  Original: ${arr.slice(start, end)}`;
+  }
+  document.getElementById("output").innerHTML = ` ${pairs.join(" ")}`;
 }
 
 function m2() {
   const input = document.getElementById("inputValue2").value;
-  const arr = input.trim().split(" ").map(Number);
-  Array.prototype.even = function () {
-    const result = [];
-
-    for (let i = 0; i < this.length; i++) {
-      if (this[i] % 2 === 0) {
-        result.push(this[i]);
-      }
-    }
-    return result;
-  };
-  document.getElementById("output2").innerHTML = `
-    Juft sonlar: [${arr.even()}]
-`;
+  const lowerCase = input.toLowerCase();
+  if (lowerCase === lowerCase.split("").reverse().join("")) {
+    document.getElementById("output2").innerHTML = "Palindrom";
+  } else {
+    document.getElementById("output2").innerHTML = "Palindrom emas";
+  }
 }
-
 function m3() {
-  const person = {
-    firstName: "John",
-    lastName: "Doe",
-    age: 25,
-    job: "Developer",
-    country: "USA",
-    get info() {
-      return `Name: ${this.firstName} ${this.lastName},
-       <br> Age: ${this.age},
-       <br> Job: ${this.job}, 
-       <br> Country: ${this.country}`;
-    },
-    set change({ firstName, lastName, age }) {
-      if (firstName) this.firstName = firstName;
-      if (lastName) this.lastName = lastName;
-      if (age) this.age = age;
-    },
+  const str1 = document.getElementById("inputValue3").value;
+  const str2 = document.getElementById("inputValue3_2").value;
+
+  const formatString = (str) => {
+    return str
+      .toLowerCase()
+      .split("")
+      .sort()
+      .join("");
   };
-  document.getElementById(
-    "output3"
-  ).innerHTML = `<span>GET:</span> ${person.info} <br> <br>`;
-  person.change = { firstName: "Jane", lastName: "Smith", age: 30 };
-  document.getElementById(
-    "output3"
-  ).innerHTML += `<span>SET:</span> ${person.info}`;
+
+  if (formatString(str1) === formatString(str2)) {
+    document.getElementById("output3").innerHTML = "Anagram";
+  } else {
+    document.getElementById("output3").innerHTML = "Anagram emas";
+  }
 }
+
+
 
 function m4() {
-  const j1 = +document.getElementById("s1").value;
-  const j2 = +document.getElementById("s2").value;
-  const j3 = +document.getElementById("s3").value;
-  const j4 = +document.getElementById("s4").value;
-  const j5 = +document.getElementById("s5").value;
-  let correctCount = 0;
-  if (j1 === 132) correctCount++;
-  if (j2 === 3) correctCount++;
-  if (j3 === 0.3) correctCount++;
-  if (j4 === 1995) correctCount++;
-  if (j5 === 1993) correctCount++;
-  document.getElementById(
-    "output4"
-  ).innerHTML = `Sizning javoblaringiz: ${correctCount}/5. Sizning baho: ${correctCount}.`;
+  const num = +document.getElementById("inputValue4").value;
+  function fibonacci(n) {
+    if (n <= 0) return 0; 
+    if (n === 1) return 1;
+    return fibonacci(n - 1) + fibonacci(n - 2); 
+  }
+
+  document.getElementById("output4").innerHTML = fibonacci(num);
 }
 
 

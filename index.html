@@ -59,13 +59,12 @@
       <section id="first">
         <div id="content">
           <h2 class="limited-line">
-            <span>Masala1.</span>Arrayga yana custom metod qo'shing. Vazifasi
-            Array.slice bilan bir xil bo'lsin. Custom yozilishi shart.
+            <span>Masala1.</span>Berilgan arrayda ikkita element yig‘indisi
+            ma’lum bir qiymatga teng bo‘lgan juftliklarni topish.
           </h2>
           <br />
-          <input id="inputValue" type="text" placeholder="Ex: Hi there hello" />
-          <input id="start" type="text" placeholder="start" />
-          <input id="end" type="text" placeholder="end" />
+          <input id="array" type="text" placeholder="Ex: 1 2 3 4 5 6" />
+          <input id="sum" type="text" placeholder="Ex: 3" />
           <button class="button-85" role="button" onclick="m1()">
             Hisoblash
           </button>
@@ -90,7 +89,7 @@
         <div id="content">
           <h2 class="limited-line">
             <span>Masala2. </span>
-            Arrayni ichidagi juft sonlarni qaytaradigan metod qo'shing
+            So‘z yoki jumla palindrom ekanligini tekshiring.
           </h2>
           <br />
           <input id="inputValue2" type="text" placeholder="Ex: 7" />
@@ -117,11 +116,11 @@
       <section id="third">
         <div id="content">
           <h2 class="limited-line">
-            <span>Masala3. </span>. Objectni to'liq ismi va u haqida bor
-            ma'lumotlarni chiqaradigan getter yarating, objectdagi 3 ta asosiy
-            ma'lumotlarni o'zgartiradigan setter yarating
+            <span>Masala3. </span>. Ikki so‘z anagrammi ekanligini aniqlash.
           </h2>
           <br />
+          <input id="inputValue3" type="text" placeholder="Ex: 7" />
+          <input id="inputValue3_2" type="text" placeholder="Ex: 7" />
 
           <button class="button-85" role="button" onclick="m3()">
             Hisoblash
@@ -146,40 +145,38 @@
           alt=""
         />
       </section>
-      <section style="width: 70%; flex-direction: column;"  id="fourth">
-        <div  style="width: 100%; text-align: start !important;" id="content">
-          <h2 style="margin-bottom: 5px;" class="limited-line"><span>1-savol. </span> 11 * 12 = ?</h2>
-          <input id="s1" type="number" placeholder="Javobingizni kiriting" />
+
+      <section id="fourth">
+        <div id="content">
+          <h2 class="limited-line">
+            <span>Masala4. </span>. Rekursiya yordamida Fibonacci sonlari ketma-ketligini hisoblash.
+          </h2>
           <br />
-          <br />
-          <h2 style="margin-bottom: 5px;" class="limited-line"><span>2-savol. </span> sqrt(9) = ?</h2>
-          <input id="s2" type="number" placeholder="Javobingizni kiriting" />
-          <br />
-          <br />
-          <h2 style="margin-bottom: 5px;" class="limited-line"><span>3-savol. </span> 0.1 + 0.2 = ?</h2>
-          <input id="s3" type="number" placeholder="Javobingizni kiriting" />
-          <br />
-          <br />
-          <h2 style="margin-bottom: 5px;" class="limited-line"><span>4-savol. </span> JavaScript nechanchi yilda chiqarilgan?</h2>
-          <input id="s4" type="number" placeholder="Javobingizni kiriting" />
-          <br />
-          <br />
-          <h2 style="margin-bottom: 5px;" class="limited-line"><span>5-savol. </span> HTML nechanchi yilda chiqarilgan?</h2>
-          <input id="s5" type="number" placeholder="Javobingizni kiriting" />
-          <br />
-          <br />
-          <button style="margin-top: 20px;" class="button-85" role="button" onclick="m4()">
+          <input id="inputValue4" type="number" placeholder="Ex: 7" />  
+          <button class="button-85" role="button" onclick="m4()">
             Hisoblash
           </button>
-          <div class="output" id="output4"></div>
+
+          <div
+            class="output"
+            style="text-align: start; padding: 10px"
+            id="output4"
+          >
+            <p>Output</p>
+          </div>
         </div>
-        <img  
-        style="
-          width: 90%;
-          border-radius: 10px;
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-        " src="./images/Screenshot_4.png" alt="">
+        <img
+          class="code"
+          style="
+            width: 45%;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          "
+          src="./images/Screenshot_4.png"
+          alt=""
+        />
       </section>
+
       <div class="swiper mySwiper">
         <h1>Let's review a little Array Methods.</h1>
         <div class="swiper-wrapper">
